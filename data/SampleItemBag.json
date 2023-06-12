@@ -1,0 +1,7 @@
+[
+    {"name": "Amazing_Hair_Dryer" , "price": 31.00 , "color": "pink",  "inStock":true} ,
+    {"item":  "Everlasting_Hair_tye" , "price": 1.00 , "color": "black",   "inStock" :true},
+    {"item":  "Restore_Conditioner" , "price": 100.00 , "color": "white",   "inStock" :true},
+    {"item":  "IQ_Shampoo" , "price": 300.00 , "color": "Rainbow",  "inStock" :true},
+    {"item":  "Liquid_Gold" , "price": 1000.00 , "color": "gold",   "inStock" :false}
+]
