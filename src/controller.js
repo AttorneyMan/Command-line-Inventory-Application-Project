@@ -42,7 +42,7 @@ function create (shoppingBag , name) {
 
 
 function view (shoppingBag , name ){
-    let oneThing = shoppingBag.filter((names) => names.name === name);
+    let oneThing = shoppingBag.filter((item) => item.item === item);
     for (let root of oneThing) {
         return `${clc.red(root.oneThing) + clc.blue(root.price) + clc.blue(root.color) + clc.magentaBright(root.inStock)}`;
     }
@@ -56,8 +56,8 @@ function deleteCart (shoppingBag) {
 };
 
 function total (shoppingBag) {
-let priceWatched = shoppingBag.map((sum) => sum.price)
-return priceWatched.reduce(prev, initialValue)
+let priceWatched = shoppingBag.map((total) => total.price)
+return priceWatched
 }
 
 

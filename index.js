@@ -25,7 +25,7 @@ const receipt = process.argv[3];
        
         case "create":
             newReceipts = create(transcations, receipt);
-           writetofile = true;
+            writetofile = true;
             break; 
         
         case "update":
