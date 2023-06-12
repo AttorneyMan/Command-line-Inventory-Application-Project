@@ -7,31 +7,31 @@ const clc = require("cli-color");
 
 
 function dex (shoppingBag){
-return shoppingBag.map(
-    (eachItem) => `name: ${eachItem.name} price: ${eachItem.price} color: ${eachItem.color} inStock ${eachItem.inStock}`
+return shoppingBag.map((eachItem) => `item: ${eachItem.item} price: ${eachItem.price} color: ${eachItem.color} inStock ${eachItem.inStock}`
  );
 }
 
 
 function update (shoppingBag, id , itemBought) {
     const dex = shoppingBag.findIndex((receipt) => receipt.id === id);
-    const newBag = inventory.find((receipt) => receipt.name === itemBought);
-     
+    const newBag = inventory.find((receipt) => receipt.name === itemBought
+    );
+    
     if (dex > -1) {
     shoppingBag[dex].item = itemBought;
     shoppingBag[dex].price = newBag.price;
     shoppingBag[dex].color = newBag.color;
-    shoppingBag[dex].inStock = newBag.inStock
+    shoppingBag[dex].inStock = newBag.inStock;
     return shoppingBag;
-    }
+  }
 }
 
 
 function create (shoppingBag , name) {
-    const bag = inventory.find((certainName) => certainName.name === name );
+    const bag = inventory.find((certainName) => certainName.name === name);
     const newP = {
         id: `${nanoid(8)}`,
-        name: bag.item,
+        item: bag.item,
         price: bag.price,
         color: bag.color,
         inStock: bag.inStock,
