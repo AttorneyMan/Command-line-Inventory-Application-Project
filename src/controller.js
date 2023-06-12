@@ -55,10 +55,38 @@ function deleteCart (shoppingBag) {
     }
 };
 
-function total (shoppingBag) {
-let priceWatched = shoppingBag.map((total) => total.price)
-return priceWatched
-}
+
+
+function getCartTotal(shoppingBag) {
+    let result = 0;
+    for (let product of shoppingBag) {
+      result += product.price;
+    }
+    return result;
+  }
+  
+
+  function filterProductsByPriceRange(products, min, max) {
+    const result = [];
+    for (let product of products) {
+      if (product.priceInCents >= min && product.priceInCents <= max) {
+        result.push(product);
+      }
+    }
+    return result;
+  }
+  
+  
+
+  function total(products, min, max) {
+    const filteredProducts = filterProductsByPriceRange(products, min, max);
+    const total = getCartTotal(filteredProducts);
+  
+    return total;
+  }
+  
+  
+
 
 
 module.exports = { 
@@ -68,5 +96,7 @@ module.exports = {
     view, 
     deleteCart,
     total,
-   
-}
+    getCartTotal,
+    filterProductsByPriceRange,
+    
+};
